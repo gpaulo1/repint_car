@@ -1,0 +1,190 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>Repint CarBus</title>
+
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="container">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="images/logo2.png">
+						<div class="carousel-caption"></div>
+					</div><!-- End Item -->	
+
+					<div class="item">
+						<img src="images/logo3.png">
+					</div><!-- End Item -->
+				</div><!-- End Carousel Inner -->
+
+			</div><!-- End Carousel -->
+
+			<div class="navbar navbar-default">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="navbar-collapse collapse navbar-responsive-collapse">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="index.html">Início</a>
+						</li>
+						<li class="active">
+							<a href="elevador.html">Elev. Pneumático</a>
+						</li>
+						<li>
+							<a href="maca.html">Macas Retráteis</a>
+						</li>
+						<li>
+							<a href="mapa.html">Localização</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="contato.html">Contato</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+
+			<div class="page-header">
+				<h1>Elevadores Eletropneumáticos</h1>
+			</div>
+			<blockquote class="warning">
+				<p>
+					Possibilitam o acesso de usuários com mobilidade reduzida ao interior do veículo com conforto, praticidade e segurança.
+				</p>
+				<small>Sua capacidade está de acordo com norma ABNT NBR 15646:2008. Dimensional aprovado pelo INMETRO e aprovado no sistema SPTRANS. Estrutura 
+em aço carbono; pintura epóxi cinza executivo com partes móveis em 
+amarelo, com o degrau e a plataforma em tapete antiderrapante, que 
+acompanha a cor do piso do veiculo.</small>
+			</blockquote>
+			<blockquote class="primary">
+				<p>
+					Trabalhamos com elevadores de alta tecnologia.
+				</p>
+				<small>O produto é semi-automático, seu movimento de subida, descida e degrau é feito pelo comando elétrico (em caso de problema elétrico o acionamento pode ser feito manualmente nos atuadores das eletroválvulas ou em caso de falta de ar possui reservatório próprio para acionamento de emergência).
+			</blockquote>
+			
+
+			<div class="page-header">
+				<h1>Imagens</h1>
+			</div>
+
+			<div class="row form-group product-chooser">
+
+				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+					<div class="product-chooser-item">
+						<img src="images/empresa/emp9.jpg" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12" alt="Desktop">
+						<div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+							<span class="title">Elevador Eletropneumático</span>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+
+				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+					<div class="product-chooser-item">
+						<img src="images/empresa/emp8.jpg" class="img-rounded col-xs-4 col-sm-4 col-md-12 col-lg-12" alt="Desktop">
+						<div class="col-xs-8 col-sm-8 col-md-12 col-lg-12">
+							<span class="title">Elevador Eletropneumático</span>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+
+			</div>
+			
+			<div class="alert alert-warning" role="alert">
+					Para maiores informações, entre em contato conosco <a href="contato.html">aqui</a>.
+</div>
+
+		</div>
+		<div class="container-fluid footer">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-1 contact">
+					<br>
+					<address>
+						<strong>Repint CarBus - Serviços Automotivos</strong>
+						<br>
+						Rua Nova York, 858 - Jd. Monte Rei
+						<br>
+						Tel.: (17) 3621-5180 | (17) 9757-1188
+						<br>
+						Jales - São Paulo | 15703-326
+						<br>
+						CNPJ: 11.437.690/0001-67
+						<br>
+					</address>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid copyright">
+			<div class="row">
+				<div class="col-md-12">
+					<br>
+					<p class="text-primary text-center">
+						Desevolvido por <a href="#">Paulo Garcia</a> <i class="fa fa-thumbs-o-up"></i>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			$(document).ready(function() {
+				$('#myCarousel').carousel({
+					interval : 4000
+				});
+
+				var clickEvent = false;
+				$('#myCarousel').on('click', '.nav a', function() {
+					clickEvent = true;
+					$('.nav li').removeClass('active');
+					$(this).parent().addClass('active');
+				}).on('slid.bs.carousel', function(e) {
+					if (!clickEvent) {
+						var count = $('.nav').children().length - 1;
+						var current = $('.nav li.active');
+						current.removeClass('active').next().addClass('active');
+						var id = parseInt(current.data('slide-to'));
+						if (count == id) {
+							$('.nav li').first().addClass('active');
+						}
+					}
+					clickEvent = false;
+				});
+			});
+
+			$(function() {
+				$('div.product-chooser').not('.disabled').find('div.product-chooser-item').on('click', function() {
+					$(this).parent().parent().find('div.product-chooser-item').removeClass('selected');
+					$(this).addClass('selected');
+					$(this).find('input[type="radio"]').prop("checked", true);
+
+				});
+			});
+
+			$(document).ready(function(ev) {
+				$('#custom_carousel').on('slide.bs.carousel', function(evt) {
+					$('#custom_carousel .controls li.active').removeClass('active');
+					$('#custom_carousel .controls li:eq(' + $(evt.relatedTarget).index() + ')').addClass('active');
+				});
+			});
+		</script>
+	</body
+</html>
+
